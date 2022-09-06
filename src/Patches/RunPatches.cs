@@ -31,8 +31,8 @@ internal class RunPatches
         var shouldRun = false;
         var padData = AtPadManager.GetPadData();
 
-        if (!shouldRun && padData != null) shouldRun = padData.IsHold(eAtButton.R2);
-        if (!shouldRun && Keyboard.current != null) shouldRun = Keyboard.current[Key.LeftShift].isPressed;
+        if (!shouldRun && padData != null) shouldRun = padData.IsHold(Plugin.Instance.RunInputPad.Value);
+        if (!shouldRun && Keyboard.current != null) shouldRun = Keyboard.current[Plugin.Instance.RunInputKey.Value].isPressed;
 
         if (!_isSpeedSet && shouldRun)
         {
